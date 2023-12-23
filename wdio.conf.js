@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 exports.config = {
     user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
     key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
   
     updateJob: false,
     specs: [
-      './e2e/specs/**.specs.js'
+      './test/specs/**.js'
     ],
     exclude: [],
   
