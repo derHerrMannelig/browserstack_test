@@ -14,6 +14,10 @@ class HomePage {
     get dragBtn () {
         return $(`//android.widget.Button[@content-desc="Drag"]`);
     }
+
+    get loginBtn () {
+        return $(`//android.widget.Button[@content-desc="Login"]`);
+    }
 }
 
 module.exports = new HomePage();
