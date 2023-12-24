@@ -10,6 +10,10 @@ class HomePage {
     get webviewBtn () {
         return $(`//android.widget.Button[@content-desc="Webview"]`);
     }
+
+    get dragBtn () {
+        return $(`//android.widget.Button[@content-desc="Drag"]`);
+    }
 }
 
 module.exports = new HomePage();
