@@ -6,6 +6,10 @@ class HomePage {
     get appDesc () {
         return $(`//android.widget.TextView[@text="Demo app for the appium-boilerplate"]`);
     }
+
+    get webviewBtn () {
+        return $(`//android.widget.Button[@content-desc="Webview"]`);
+    }
 }
 
 module.exports = new HomePage();
