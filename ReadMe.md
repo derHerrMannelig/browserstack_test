@@ -1,27 +1,27 @@
-# Repo with test task for browserstack
-
-## Task
-1.  Clone repo and install all dependencies.
-2.  Upload app Android-NativeDemoApp to browserstack using API ([Link](https://www.browserstack.com/docs/app-automate/api-reference/appium/apps#upload-an-app)) and add unique ID to the ```wdio.conf.js```.
-3.  Create test 5 test cases (locators can be found using [Appium Inspector](https://github.com/appium/appium-inspector/releases) that conected to the Browserstack account).
-4.  Create workflow with using secrets (for user and key in capabilities)([description of secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)).
-5.  Create 2 config files (with different devices)
-
-## Tips
-1.  You can create multiple accounts in browserstack (demo trial - 100 minutes).
-2.  First of all find all necessary locators.
-3.  In the Appium Inspector at the header choose ```Select Cloud Providers -> Browserstack``` and into ```JSON Representation``` insert the next:
-```
-{
-  "appium:protocol": "https",
-  "appium:hostname": "hub.browserstack.com",
-  "appium:path": "/wd/hub",
-  "appium:maxInstances": 1,
-  "appium:app": "Your App ID is here",
-  "appium:os_version": "9.0",
-  "appium:deviceName": "Google Pixel 3",
-  "platformName": "Android",
-  "appium:autoAcceptAlerts": "true",
-  "appium:browserstack.appium_version": "1.22.0"
-}
-```
+# browserstack task
+## Summary
+This is repository for Browserstack task. Tested app bundled with repository.  
+[Test cases list](https://docs.google.com/spreadsheets/d/1ihla-asq8CCOzOSLN5fBby0cy_RXw1QmiHMka2wvNCQ/edit?usp=sharing)  
+## Requirements
+[Node LTS](https://nodejs.org/) (18.14.2 or higher)  
+[Java](https://www.oracle.com/java/technologies/downloads/#java8) (8 or higher)  
+## Installation
+1. Clone this repo, run `npm install`;
+2. Create `.env` file with all needed data (refer to `.env.example`);
+3. You're good to go!
+## Tests launch
+There are multiple launch options:
+1. `npm run wdio:pixel3` — run all tests on Google Pixel 3 — *this is main launch option*;
+2. `npm run wdio:pixel2` — run all tests on Google Pixel 2;
+3. `npm run wdio:note` — run all tests on Samsung Galaxy Note 10;
+4. `npm run wdio:allure` — run all tests on Google Pixel 3, reporter: Allure;
+5. `npm run allure:open` — open local Allure report.
+## To submit a bug report:
+Navigate into **Issues** tab, click on "**New issue**" button. Follow this template:
+1. Title;
+2. Description;
+3. Steps to reproduce;
+4. Expected behavior;
+5. Actual behavior;
+6. Screenshots;
+7. Additional details.
