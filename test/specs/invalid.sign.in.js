@@ -6,8 +6,8 @@ const { faker } = require('@faker-js/faker');
 const randomEmail = faker.internet.email();
 const randomPassword = faker.internet.password();
 
-describe('Sign up / sign in', () => {
-    it('should verify registration and login', async () => {
+describe('Invalid sign in', () => {
+    it('should verify login error with invalid credentials', async () => {
         await page.touch(homePage.loginBtn);
         await expect(loginPage.loginTitle).toBeDisplayed();
         await expect(loginPage.loginTitle).toHaveText('Login / Sign up Form');
