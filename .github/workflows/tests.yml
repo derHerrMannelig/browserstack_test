@@ -18,7 +18,6 @@ jobs:
         - name: Test
           run: npm run wdio:pixel3 || true
         - uses: actions/upload-artifact@v1
-          if: failure()
           with:
             name: logs
             path: logs
