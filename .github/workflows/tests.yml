@@ -1,0 +1,24 @@
+name: Mobile tests
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+        BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+        BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18
+        - name: Install
+          run: npm install
+        - name: Test
+          run: npm run wdio:pixel3
+        - uses: actions/upload-artifact@v1
+          if: failure()
+          with:
+            name: logs
+            path: logs
