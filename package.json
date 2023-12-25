@@ -7,7 +7,9 @@
     "@wdio/spec-reporter": "^8.1.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio:pixel3": "wdio run ./pixel3.conf.js",
+    "wdio:pixel2": "wdio run ./pixel2.conf.js",
+    "wdio:note": "wdio run ./note.conf.js"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
